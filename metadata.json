@@ -1,0 +1,6 @@
+{
+  "name": "SnapTask",
+  "description": "Convert screenshots into structured, actionable items instantly with Gemini Vision.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

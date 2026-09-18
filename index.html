@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnapTask - AI Screenshot to Task Extraction</title>
+    <meta name="description" content="Convert screenshots into structured, actionable items instantly with Gemini Vision." />
+    <meta property="og:title" content="SnapTask - AI Screenshot to Task Extraction" />
+    <meta property="og:description" content="Convert screenshots into structured, actionable items instantly with Gemini Vision." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Safeguard against "Cannot set property fetch of #<Window> which has only a getter" in sandboxed environments -->
+    <script>
+      (function () {
+        try {
+          var _origFetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : undefined;
+          var _currentFetch = _origFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function () {
+              return _currentFetch;
+            },
+            set: function (fn) {
+              _currentFetch = fn;
+            },
+            configurable: true,
+            enumerable: true,
+          });
+        } catch (e) {
+          /* ignore if cannot redefine */
+        }
+      })();
+    </script>
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('snaptask_theme');
+          if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <!-- Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-full bg-[#FAF8FF] dark:bg-[#0B0F19] text-[#131B2E] dark:text-slate-100 antialiased transition-colors duration-150">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
